@@ -2,66 +2,101 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>電腦版刮刮履歷</title>
-		<style type="text/css">
-			#c1{
-				border: 1px solid white;
-				position: absolute;
-			}
-			
-			#c2{
-				border: 1px solid white;
-			}
-			
-			body{
-				position: relative;
-			}
-		</style>
+		<link rel="stylesheet" href="./style.css">
+		<link rel='stylesheet' href='./bootstrap.min.css'>
+		<link rel="stylesheet" type="text/css" href="./bootstrap-grid.min.css"/>
+		<script src="./jquery-1.8.3.min.js"></script>
+		<script src="./Pair.js"></script>
+		<title>1122</title>
+		
 	</head>
 	<body>
+		<!--h2>Pair
+        <code id="statusField">NO-STATUS</code>
+        </h2-->
 		
-		<canvas id="c1" width="3000" height="5000"></canvas>
-		
-		<canvas id="c2" width="3000" height="5000"></canvas>
-		
-	</body>
-	<script type="text/javascript">
-		var c1 = document.getElementById("c1");
-		var c2 = document.getElementById("c2");
-		
-		var ctx1 = c1.getContext("2d");
-		var ctx2 = c2.getContext("2d");
-		
-		
-		// 將完整履歷放到下層  canvas2
-		var imgs = new Image();
-		imgs.src = 'img/resume_ori.jpg';
-		imgs.onload = function(){
-			ctx2.drawImage(this,0,0)
-		}
-		
-		// 需要刮的履歷放在上層  canvas1
-		var img2 = new Image();
-		img2.src = 'img/resume_mask.jpg';
-		img2.onload = function(){
-			ctx1.drawImage(this,0,0)
-		}
-		
-		// 監聽canvas的onmousedown事件
-		c1.ontouchstart = function(ev){ // 原本是onmousedown 
-		c1.ontouchmove = function(e){  // 原本是onmousemove 
-			console.log(e);
-			var w = 50;	
-			var h = 50;	
-			var x = e.pageX-c1.offsetLeft - w/2;
-			var y = e.pageY-c1.offsetTop - h/2;
-			ctx1.clearRect(x,y,w,h);
-		}
-		}
-		c1.ontouchend = function(ev){ // 原本是onmouseup 
+		<form class="multisteps-form__form" id="abc">
+			<div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+				<script>
+					document.write('<h3 class="multisteps-form__title">' + "參與人員" + '</h3>');
+				</script>
+				<p> </p>
+				<div class="ckbx-style-15-label">
+					<script>document.write("玉霞")</script>
+				</div>
+								                                       
+				<div class="ckbx-style-15">              
+					<input type="checkbox" id="chk_one" value="0" name="chk_one">
+				    <label for="chk_one"></label>
+				</div>
+				<p> </p>
+				<div class="ckbx-style-16-label">
+					<script>document.write("Jennifer")</script>
+				</div>                  
+				<div class="ckbx-style-16">             
+					<input type="checkbox" id="chk_two" value="0" name="chk_two">
+				    <label for="chk_two"></label>
+				</div>
+				<p> </p>
+				<div class="ckbx-style-15-label">
+					<script>document.write("玉娟")</script>
+				</div>                                     
+				<div class="ckbx-style-15">                 
+					<input type="checkbox" id="chk_three" value="0" name="chk_three">
+				    <label for="chk_three"></label>
+				</div>
 
-		c1.ontouchmove = null; // 原本是onmousemove 
-		}
+				<div class="ckbx-style-16-label">
+					<script>document.write("冠緯")</script>
+				</div>                     
+				<div class="ckbx-style-16">                          
+					<input type="checkbox" id="chk_four" value="0" name="chk_four">
+				    <label for="chk_four"></label>
+				</div>
 
-	</script>
+				<div class="ckbx-style-15-label">
+					<script>document.write("玉貞")</script>
+				</div>                                            
+				<div class="ckbx-style-15">
+					<input type="checkbox" id="chk_five" value="0" name="chk_five">
+				    <label for="chk_five"></label>
+				</div>
+								
+				<div class="ckbx-style-16-label">
+					<script>document.write("艾莎")</script>
+				</div>
+
+				<div class="ckbx-style-16">                 
+					<input type="checkbox" id="chk_six" value="0" name="chk_six">
+				    <label for="chk_six"></label>
+				</div>				
+				<br>			
+				<div class = "row">
+					<div class="button-row d-flex mt-4"> </div>
+				</div>
+
+				<div class = "row">
+					
+					<script>
+					document.write('<input type="button" class="button_2" id="btn_download" value="' + "開始配對" + '" style="width: 75%;left:55px;" onclick="Pair()"> &nbsp; ');								
+					</script>
+				</div>	
+				<br><br>
+
+				<div class = "row">					
+					<script>
+						document.write('<h3 class="multisteps-form__title" style="left:15px;">' + "配對結果" + '</h3>');													
+					</script>
+				</div>	
+				
+				
+				<div class="main">
+					<table style="table-layout:fixed;width: 450px;">
+  						<tbody id="tbody1">
+  						</tbody>
+					</table>					
+				</div>	
+			</div>
+		</form>
+	</body>	                					
 </html>
