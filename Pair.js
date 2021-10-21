@@ -1,3 +1,5 @@
+var x=0;
+
 function setCookie(c_name, value, expiredays) {
     var exdate = new Date();
     exdate.setDate(exdate.getDate() + 365);
@@ -155,7 +157,9 @@ function Pair() {
         tableData += "</tr>";
     }
     
-    $("#tbody1").html(tableData)                       
+    $("#tbody1").html(tableData)
+    x=x +1;
+    document.getElementById('dianjicishu').innerHTML = x;                
 }
 
 
