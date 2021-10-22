@@ -158,8 +158,8 @@ function Pair() {
     }
     
     $("#tbody1").html(tableData)
-    x=x +1;
-    document.getElementById('dianjicishu').innerHTML = x;                
+    //x=x +1;
+    //document.getElementById('dianjicishu').innerHTML = x;                
 }
 
 
